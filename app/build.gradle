@@ -1,13 +1,48 @@
+
+
 plugins {
+    /*
+     * 1. O gradle é um sistema de build genérico utilizado em diversos sistemas, não apenas no Android.
+     * No início do arquivo temos as configurações dos plugins para habilitar os módulos de compilação
+     * do Android e kotlin no gradle.
+     */
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
     namespace 'com.example.applicationuninter'
+    /*
+     * 2. O compileSdkVersion representa a API Level para a qual o projeto está sendo compilado. É
+     * sempre indicado compilar com as versões mais novas do Android. No caso,
+     * API Level 33 corresponde ao Android 13.
+     */
     compileSdk 33
+    /*
+     *3. buildToolsVersion corresponde à versão do SDK Build Tools instalado no Android SDK. Essa
+     * linha não é obrigadoria; se voc~e a remover, será utilizada a versão do build tools padrão do
+     * plugin gradle que está instalado no projeto.
+     */
 
     defaultConfig {
+    /*
+        4. O applicationId é uma das configurações mais importantes e representa o id do seu
+        aplicativo no Google Play, portanto ele deve ser único.
+
+        5. O minSdkVersion representa a API Level mínima suportada pelo seu aplicativo. Nesse caso,
+        a API Level 21 corresponde ao Android 5.0.
+
+        6. O targetSdkVersion sempre precisa estar igual ao compileSdkVersion para garantir que seu
+        aplicativo seja compilado com uma versão recente do Android.
+
+        7. O versionCode é um número inteiro que representa o número da versão de um build do
+        aplicativo. Esse número precisa ser obrigatoriamente incrementado sempre que publicar o
+        aplicativo no Google Play. Na última aula prática, veremos como publicar o aplicativo na loja.
+
+        8. O versionName também é utilizado pelo Google Play, mas o objetivo dele é mostrar um
+        número de versão amigável para o usuário – por exemplo, 1.0.0 ou 1.0.1. Podemos aumentar a
+        versão do aplicativo sempre que necessário.
+     */
         applicationId "com.example.applicationuninter"
         minSdk 24
         targetSdk 33
@@ -18,6 +53,11 @@ android {
     }
 
     buildTypes {
+        /*
+            9. Na seção buildTypes são configuradas as opções de build, como debug e release. O build de
+            release é sempre utilizado para enviar o aplicativo para a loja. Também vermos detalhes
+            dessas configurações na última aula prática sobre como publicar o aplicativo no Google Play.
+         */
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -33,7 +73,11 @@ android {
 }
 
 dependencies {
-
+/*
+    10. Na seção dependencies são adicionadas as configurações das bibliotecas utilizadas no
+    aplicativo. Essas bibliotecas nos ajudam no desenvolvimento, facilitando a programação.
+    É comum os desenvolvedores chamarem essas bibliotecas de “dependências” –acostume-se com o termo.
+ */
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'

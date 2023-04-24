@@ -5,11 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--
+    No Android, o layout da tela é escrito em XML. Por padrão, o arquivo de layout começa com a
+    palavra "activity" e termina com o nome da classe.
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    Exe:
+            LoginActivity > activity_login.XML
+            HomeActivity > activity_home.XML
+            CadastroActivity > activity_cadastro.xml
+
+      Cada activity é formada pela dupla classe com código + layoutXML.
+-->
+    <ImageView
+        android:layout_width="405dp"
+        android:layout_height="703dp"
+        android:src="@drawable/kobra01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

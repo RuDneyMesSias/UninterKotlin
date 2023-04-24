@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+        Declaração de permissões de sistemas
+    -->
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!--
+        Configuração do Projeto
+    -->
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +22,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApplicationUninter"
         tools:targetApi="31">
+
+        <!--
+            Para cada tela, deve ser incluir todas as telas nesta tag <activity>
+        -->
         <activity
+
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
+            <!--
+                < acttion android:name=".MAIN" />: indica que a classe MainActivity será o
+                ponto de entrada do aplicativo, ou seja, executada quando o aplicativo for iniciado.
+            -->
+            <!--
+                <category android:name=".LAUNCHER" />: Indica que o ícone dessa activity ficará
+                visível na Home do Android para o usuário abrir o aplicativo.
+            -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
